@@ -22,8 +22,6 @@ E2.grid(row=2, column=2)
 
 def helloCallBack():
    #tkMessageBox.showinfo( "Hello Python", E1.get("1.0","end").split(" "))
-   print(E1.get("1.0","end-1c"))
-   print(E2.get("1.0","end-1c"))
 
    pre = E1.get("1.0","end-1c").split(" ")
 
@@ -32,17 +30,17 @@ def helloCallBack():
 
    for rule in rules:
       els = rule.split(" ")
-    
+
       output= False
       remove = False
       for el in els:
-   	 
+
 	 if el == "then":
             output = True
    	 else:
          	if(not el in pre and not output):
-		   break               
-  		else: 	
+		   break
+  		else:
          	   if(output and el == "remove"):
 	     	      remove = True
                    else:
@@ -52,7 +50,7 @@ def helloCallBack():
 			    pre.remove(el)
 		         else:
 	     	            pre.append(el)
-   str1 = ' '.join(str(e) for e in pre)		               
+   str1 = ' '.join(str(e) for e in pre)
    L3 = Label(main, text="output: "+ str1)
    L3.grid(row=4, column=2)
 
